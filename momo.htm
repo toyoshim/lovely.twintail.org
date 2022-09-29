@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>田村ゆかりコピーバンド＋ももいろハネムーン</title>
+<style>
+h1 {
+    color: #ff3333;
+}
+.item {
+    font-size: x-large;
+    color: #881111;
+}
+div {
+    color: #002200;
+}
+</style>
+</head>
+<body bgcolor="#ffeeff">
+<div align="center" style="padding: 10%;">
+<div id="canvas"></div>
+<script>
+var canvas = document.createElement('canvas');
+if (true) {
+  var api2d = canvas.getContext('2d');
+  var stage = document.createElement('img');
+  var title = document.createElement('img');
+  var vocal = document.createElement('img');
+  var dr = document.createElement('img');
+  var ba_gt = document.createElement('img');
+  var key_sax = document.createElement('img');
+  var redraw = function () {
+    api2d.setTransform(1, 0, 0, 1, 0, 0);
+    if (stage.loaded)
+      api2d.drawImage(stage, 0, 0, canvas.width, canvas.height);
+    if (title.loaded) {
+      var width = Math.min(title.width, canvas.width / 2);
+      var height = width / title.width * title.height;
+      var x = (canvas.width - width) / 2;
+      var y = canvas.height / 20;
+      api2d.drawImage(title, x, y, width, height);
+    }
+    api2d.setTransform(1, 0, 0, 1, 0, canvas.height / 8);
+    if (dr.loaded)
+      api2d.drawImage(dr, 0, 0, canvas.width, canvas.height);
+    if (ba_gt.loaded)
+      api2d.drawImage(ba_gt, 0, 0, canvas.width, canvas.height);
+    if (key_sax.loaded)
+      api2d.drawImage(key_sax, 0, 0, canvas.width, canvas.height);
+    if (vocal.loaded) {
+      api2d.setTransform(1, 0, 0, 1, canvas.width / 2, -canvas.height);
+      var rad = (Math.random() - 0.5) * 5 * Math.PI / 180;
+      var x = (Math.random() - 0.5) * canvas.width / 50;
+      var y = (Math.random() - 0.5) * canvas.height / 50 + canvas.height / 16;
+      api2d.transform(Math.cos(rad), Math.sin(rad), -Math.sin(rad), Math.cos(rad), x, y);
+      api2d.transform(1, 0, 0, 1, -canvas.width / 2, canvas.height);
+      api2d.drawImage(vocal, 0, 0, canvas.width, canvas.height);
+      setTimeout(redraw, 500);
+    }
+  };
+  var resize = function () {
+    var width = Math.max(document.body.clientWidth, document.body.scrollWidth) * 0.7;
+    var height = width / 1920 * 1200;
+    canvas.width = width;
+    canvas.height = height;
+    if (!vocal.loaded)
+        redraw();
+  };
+  resize();
+  window.addEventListener('resize', resize, false);
+  document.getElementById('canvas').appendChild(canvas);
+
+  stage.addEventListener('load', function (e) {
+    stage.loaded = true;
+    redraw();
+    title.addEventListener('load', function (e) {
+      title.loaded = true;
+      redraw();
+      setTimeout(function () {
+        vocal.addEventListener('load', function (e) {
+          vocal.loaded = true;
+          redraw();
+          setTimeout(function () {
+            dr.addEventListener('load', function (e) {
+            dr.loaded = true;
+            setTimeout(function () {
+              ba_gt.addEventListener('load', function (e) {
+                ba_gt.loaded = true;
+                setTimeout(function () {
+                  key_sax.addEventListener('load', function (e) {
+                    key_sax.loaded = true;
+                  });
+                  key_sax.src = 'img/key_sax.png';
+                }, 1000);
+              });
+              ba_gt.src = 'img/ba_gt.png';
+            }, 1000);
+          });
+          dr.src = 'img/dr.png';
+          }, 1000);
+        });
+        vocal.src = 'img/vocal.png';
+      }, 1000);
+    }, false);
+    title.src = 'momotitll.gif';
+  }, false);
+  stage.src = 'img/stage.png';
+}
+</script>
+<h1>最新情報</h1>
+<p>ほぼ10年ぶりに第4期のライブをやります。</p>
+<div>
+日時：2018年4月15日 17:00開場 17:30開演<br>
+場所：<a target="_top" href="http://hearts-web.net/plus/">大塚 Live House Hearts+</a><br>
+</div>
+<p>トップバッターになります。事前予約で少しだけお安くなりますので<a target="_top" href="https://tiget.net/events/22663">こちら</a>からよろしくお願いします。</p>
+
+<img border="0" src="momoicon.gif" width="31" height="23"> <span class="item">第4期メンバー</span> <img border="0" src="momoicon.gif" width="31" height="23"><br>
+
+<div>
+Vo: クリオネ<br>
+Vo: エミ君。<br>
+Gt: kawagu<br>
+Sax: アンドー<br>
+Key: とよしま<br>
+Ba: RICE<br>
+Dr: チャーリー<br>
+&amp;<br>
+ナレーション: 鈍器<br>
+</div>
+<br>
+
+<img border="0" src="momoicon.gif" width="31" height="23"> <span class="item">演奏予定曲</span> <img border="0" src="momoicon.gif" width="31" height="23"><br>
+
+<div>
+きらら時間旅行<br>
+Luv Fanatic<br>
+Sensitive Venus<br>
+Petit Lumière<br>
+ナルシスが嘘をつく<br>
+</div>
+<br>
+
+あとは本番のお楽しみ！<br><br>
+
+恥ずかしながら練習音源も<a href="https://www.youtube.com/watch?v=vKQNCH09lyQ">YouTube</a>にて公開中です。
+<br><br>
+<img border="1" src="momobun.gif" width="200" height="40"><br>
+
+<p align="center">
+<img border="0" src="momoicon.gif" width="31" height="23"><img border="0" src="momoicon.gif" width="31" height="23"><img border="0" src="momoicon.gif" width="31" height="23"><img border="0" src="momoicon.gif" width="31" height="23"><img border="0" src="momoicon.gif" width="31" height="23"><img border="0" src="momoicon.gif" width="31" height="23"><img border="0" src="momoicon.gif" width="31" height="23"><img border="0" src="momoicon.gif" width="31" height="23"><img border="0" src="momoicon.gif" width="31" height="23"><img border="0" src="momoicon.gif" width="31" height="23"><img border="0" src="momoicon.gif" width="31" height="23"><img border="0" src="momoicon.gif" width="31" height="23"><img border="0" src="momoicon.gif" width="31" height="23"><img border="0" src="momoicon.gif" width="31" height="23"><img border="0" src="momoicon.gif" width="31" height="23"><img border="0" src="momoicon.gif" width="31" height="23"></p>
+
+<p align="center">
+<small>今となっては超レアな大昔の公式ページへのリンクバナー！！！</small><br>
+<a href="http://www.tamurayukari.com/" target="_blank">
+<img border="0" src="yukarinbun.gif" width="234" height="60"></a>
+
+</body>
+</html>
